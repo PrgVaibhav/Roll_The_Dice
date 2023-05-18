@@ -11,8 +11,6 @@
 :root {
     --win-bg: #85FFBD;
     --win-bg-linear: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
-    --lost-bg: #FF2525;
-    --lost-bg-linear: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
     --bg: #FF9A8B;
     --bg-linear: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
 
@@ -26,6 +24,7 @@ main {
     background: var(--bg-linear);
 }
 
+
 .playing_card {
     display: flex;
     justify-content: center;
@@ -35,8 +34,8 @@ main {
     padding: 10px;
 }
 
-.player_1,
-.player_2 {
+.player_0,
+.player_1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -55,23 +54,28 @@ main {
     transition: all .5s ease;
 }
 
+.winner {
+    background: var(--win-bg-linear);
+}
+
+
 .hidden {
     display: none;
 }
 
 
-.player_1 {
+.player_0 {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.player_2 {
+.player_1 {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
-.player_1 .header h1,
-.player_2 .header h1 {
+.player_0 .header h1,
+.player_1 .header h1 {
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -79,8 +83,8 @@ main {
 
 }
 
-.player_1 .header .total_score_1,
-.player_2 .header .total_score_2 {
+.player_0 .header .total_score_1,
+.player_1 .header .total_score_2 {
     font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -90,15 +94,15 @@ main {
 }
 
 
-.player_1 .footer,
-.player_2 .footer {
+.player_0 .footer,
+.player_1 .footer {
     background-color: #FF99AC;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.player_1 .footer p,
-.player_2 .footer p {
+.player_0 .footer p,
+.player_1 .footer p {
     display: flex;
     flex-direction: column;
     justify-content: center;

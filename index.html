@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll-The-Dice</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <section class="playing_card">
+        <div class="player_1 active">
+          <div class="header">
+            <h1>Player 1</h1>
+
+            <p id="total_score" class="total_score_1"></p>
+          </div>
+          <div class="footer">
+            <p>
+              Current Score:
+              <span id="current_score_0" class="current_score_1">0</span>
+            </p>
+          </div>
+        </div>
+        <div class="player_2">
+          <div class="header">
+            <h1>Player 2</h1>
+            <p id="total_score" class="total_score_2"></p>
+          </div>
+          <div class="footer">
+            <p>
+              Current Score:
+              <span id="current_score_1" class="current_score_2">0</span>
+            </p>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="header">
+            <img src="dice-5.png" alt="dice image" class="dice_image" />
+            <button class="reset">New Game 🔁</button>
+          </div>
+
+          <div class="footer">
+            <button class="roll">Roll Dice 🎲</button>
+            <button class="hold">Pass Dice 👀</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

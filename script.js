@@ -12,6 +12,21 @@ const playerTwoCurrentScore = document.querySelector("#current_score_1");
 const playerOneTotalScore = document.querySelector("#total_score_0");
 const playerTwoTotalScore = document.querySelector("#total_score_1");
 
+// Getting modal
+const openModal = document.querySelector(".open_modal");
+const closeModal = document.querySelector(".close_modal");
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
+
+openModal.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+});
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
+
 // buttons to control the game
 const gameReset = document.querySelector(".reset");
 const rollDice = document.querySelector(".roll");

@@ -18,10 +18,13 @@
     --score-font: 'Luckiest Guy', cursive;
 }
 
+body {
+
+    background: var(--bg-linear);
+}
 
 main {
 
-    background: var(--bg-linear);
     position: relative;
 }
 
@@ -54,6 +57,7 @@ main {
     animation: modal .5s ease;
     padding: 10px;
     font-family: var(--header-font);
+    z-index: 100;
 
 }
 
@@ -258,6 +262,65 @@ main {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.controls button:hover {
+    background-color: #e0e0e0;
+}
+
 .controls button:active {
     transform: translateY(4px);
+}
+
+footer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer p {
+    font-size: 1rem;
+    font-family: var(--score-font);
+    /* font-weight: bold; */
+    text-align: center;
+    letter-spacing: 3px;
+    /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); */
+}
+
+footer p a {
+    color: black;
+}
+
+footer p a:hover {
+    transform: rotate3d(1, 1, 1, 360deg);
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .player_0 .header h1,
+    .player_1 .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .player_0 .header .total_score_1,
+    .player_1 .header .total_score_2 {
+        font-size: 3rem;
+    }
+
+    .player_0 .footer p,
+    .player_1 .footer p {
+        font-size: 1rem;
+    }
+
+    .dice_image {
+        width: 80px;
+    }
+
+    .controls button {
+        font-size: .9rem;
+    }
+
+    footer p {
+        font-size: .8rem;
+    }
 }

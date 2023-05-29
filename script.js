@@ -37,8 +37,8 @@ const rollDice = document.querySelector(".roll");
 const pass = document.querySelector(".hold");
 const diceImage = document.querySelector(".dice_image");
 
-// const playerOneName = prompt("Enter player one name");
-// const playerTwoName = prompt("Enter player two name");
+const playerOneName = prompt("Enter player one name");
+const playerTwoName = prompt("Enter player two name");
 
 let scores, currentScore, activePlayer, playing;
 
@@ -55,13 +55,13 @@ const init = () => {
   playerTwoCurrentScore.textContent = 0;
   playing = true;
 
-  // if (!playerOneName || !playerTwoName) {
-  //   player1Name.textContent = "Player 1";
-  //   player2Name.textContent = "Player 2";
-  // } else {
-  //   player1Name.textContent = playerOneName;
-  //   player2Name.textContent = playerTwoName;
-  // }
+  if (!playerOneName || !playerTwoName) {
+    player1Name.textContent = "Player 1";
+    player2Name.textContent = "Player 2";
+  } else {
+    player1Name.textContent = playerOneName;
+    player2Name.textContent = playerTwoName;
+  }
 
   diceImage.classList.add("hidden");
   playerOne.classList.remove("winner");

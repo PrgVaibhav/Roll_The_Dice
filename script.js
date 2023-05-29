@@ -55,7 +55,7 @@ const init = () => {
   playerTwoCurrentScore.textContent = 0;
   playing = true;
 
-  if (!playerOneName || !playerTwoName) {
+  if (!playerOneName && !playerTwoName) {
     player1Name.textContent = "Player 1";
     player2Name.textContent = "Player 2";
   } else {

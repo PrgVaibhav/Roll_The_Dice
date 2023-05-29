@@ -34,7 +34,6 @@ main {
     background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6));
     position: absolute;
     top: 0;
-    /* left: 0; */
     overflow: auto;
     padding: 10px;
 
@@ -61,7 +60,6 @@ main {
 
 }
 
-
 @keyframes modal {
     0% {
         transform: translate(-50%, -100%);
@@ -72,17 +70,25 @@ main {
     }
 }
 
-
-
 .modal .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.modal p {
+.modal .content p {
     font-size: 1.1rem;
     overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .modal .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .modal .content p {
+        font-size: .85rem;
+    }
 }
 
 .modal .header .close_modal {
@@ -152,6 +158,38 @@ main {
 }
 
 
+.roll_animation_close {
+    animation: roll_animation_close 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.roll_animation_open {
+    animation: roll_animation_open 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+@keyframes roll_animation_close {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes roll_animation_open {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
 .player_0 {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -211,8 +249,12 @@ main {
     width: 100px;
     height: auto;
     object-fit: cover;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     animation: roll .7s ease-in-out;
+    transition: all .5s ease;
+}
+
+.dice_image:hover {
+    transform: rotate(360deg);
 }
 
 @keyframes roll {
@@ -280,10 +322,7 @@ footer {
 footer p {
     font-size: 1rem;
     font-family: var(--score-font);
-    /* font-weight: bold; */
     text-align: center;
-    letter-spacing: 3px;
-    /* text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5); */
 }
 
 footer p a {
@@ -313,14 +352,15 @@ footer p a:hover {
     }
 
     .dice_image {
-        width: 80px;
+        width: 70px;
     }
 
     .controls button {
-        font-size: .9rem;
+        padding: 5px;
+        font-size: .8rem;
     }
 
     footer p {
-        font-size: .8rem;
+        font-size: .7rem;
     }
 }

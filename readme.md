@@ -20,6 +20,11 @@
 5.  The game continues in a turn-based fashion until one of the players reaches a total score of 100.
 6.  At any point, players can restart the game by clicking the "Restart" button.
 
+## Recent Updates
+
+- Now you can add your own custom names for the players.
+- The game now will not break on 1, dragon has been added to break your chance 😖.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or would like to suggest enhancements, please submit a pull request.

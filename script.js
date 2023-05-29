@@ -4,6 +4,10 @@
 const playerOne = document.querySelector(".player_0");
 const playerTwo = document.querySelector(".player_1");
 
+// Player name
+const player1Name = document.querySelector(".player_one_name");
+const player2Name = document.querySelector(".player_two_name");
+
 // Storing players current score
 const playerOneCurrentScore = document.querySelector("#current_score_0");
 const playerTwoCurrentScore = document.querySelector("#current_score_1");
@@ -33,6 +37,9 @@ const rollDice = document.querySelector(".roll");
 const pass = document.querySelector(".hold");
 const diceImage = document.querySelector(".dice_image");
 
+// const playerOneName = prompt("Enter player one name");
+// const playerTwoName = prompt("Enter player two name");
+
 let scores, currentScore, activePlayer, playing;
 
 // Declaring initial state for players
@@ -47,6 +54,14 @@ const init = () => {
   playerOneCurrentScore.textContent = 0;
   playerTwoCurrentScore.textContent = 0;
   playing = true;
+
+  // if (!playerOneName || !playerTwoName) {
+  //   player1Name.textContent = "Player 1";
+  //   player2Name.textContent = "Player 2";
+  // } else {
+  //   player1Name.textContent = playerOneName;
+  //   player2Name.textContent = playerTwoName;
+  // }
 
   diceImage.classList.add("hidden");
   playerOne.classList.remove("winner");
@@ -76,14 +91,15 @@ const switchPlayer = () => {
 
 rollDice.addEventListener("click", () => {
   if (playing) {
-    const diceNumber = Math.trunc(Math.random() * 6) + 1;
+    const diceNumber = Math.trunc(Math.random() * 7) + 1;
 
     diceImage.classList.remove("hidden");
     diceImage.src = `dice-${diceNumber}.png`;
 
     console.log(diceNumber);
-    if (diceNumber !== 1) {
+    if (diceNumber !== 7) {
       currentScore = currentScore + diceNumber;
+
       document.getElementById(`current_score_${activePlayer}`).textContent =
         currentScore;
     } else {
